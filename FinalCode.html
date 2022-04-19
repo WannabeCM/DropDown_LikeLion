@@ -7,6 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css" />
     <style>
+      .txt-ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .cont-select {
         width: 200px;
         margin: 100px auto 0;
@@ -24,10 +29,6 @@
         cursor: pointer;
         background: url(./icon-Triangle-down.svg) no-repeat;
         background-position: right 14px center;
-
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .btn-select:focus {
@@ -48,6 +49,26 @@
         margin-top: 20px;
         border: 1px solid #c4c4c4;
         box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      .list-member li {
+        padding: 5px 18px;
+      }
+
+      .list-member li button {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .list-member li button:focus,
+      .list-member li button:hover {
+        background-color: #f8e4ff;
       }
     </style>
   </head>
@@ -55,13 +76,15 @@
   <body>
     <article class="cont-select">
       <h2 class="txt-hide">최애 프로그래밍언어를 선택해 주세요</h2>
-      <button type="button" class="btn-select on">최애 프로그래밍 언어</button>
+      <button type="button" class="btn-select on txt-ellipsis">
+        최애 프로그래밍 언어
+      </button>
       <ul class="list-member">
-        <li><button type="button">Python</button></li>
-        <li><button type="button">Java</button></li>
-        <li><button type="button">JavaScript</button></li>
-        <li><button type="button">C#</button></li>
-        <li><button type="button">C/C++</button></li>
+        <li><button type="button" class="txt-ellipsis">Python</button></li>
+        <li><button type="button" class="txt-ellipsis">Java</button></li>
+        <li><button type="button" class="txt-ellipsis">JavaScript</button></li>
+        <li><button type="button" class="txt-ellipsis">C#</button></li>
+        <li><button type="button" class="txt-ellipsis">C/C++</button></li>
       </ul>
     </article>
   </body>
